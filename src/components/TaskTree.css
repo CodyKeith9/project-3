@@ -1,57 +1,102 @@
-.task-tree-container {
+/* Redesigned TaskTree.css based on Draw.io layout */
+
+.task-tree-vertical {
   position: relative;
-  padding: 2rem;
-  margin-top: 2rem;
-  border-top: 2px solid gold;
+  padding: 3rem 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.task-line {
+/* Center spine */
+.task-tree-vertical::before {
+  content: "";
   position: absolute;
-  top: 2rem;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: gold;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: gold;
+  transform: translateX(-50%);
   z-index: 0;
 }
 
-.task-nodes {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+.task-card {
   position: relative;
+  width: 40%;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 2px solid gold;
+  border-radius: 12px;
+  background: rgba(24, 24, 24, 0.6);
+  backdrop-filter: blur(8px);
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+  transition: all 0.3s ease;
   z-index: 1;
 }
 
-.task-node {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 0.75rem 1rem;
-  border: 1px solid gray;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  position: relative;
+.task-card.left {
+  align-self: flex-start;
+  margin-right: auto;
+  transform: translateX(-10%);
 }
 
-.task-node.completed {
-  text-decoration: line-through;
+.task-card.right {
+  align-self: flex-end;
+  margin-left: auto;
+  transform: translateX(10%);
+}
+
+.task-card.completed {
   opacity: 0.6;
+  text-decoration: line-through;
 }
 
-.delete-btn {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: red;
-  color: white;
+.task-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-actions button {
+  background: none;
   border: none;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-weight: bold;
+  color: gold;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.task-actions button:hover {
+  color: white;
+  text-shadow: 0 0 5px gold;
+}
+
+@media screen and (max-width: 1200px) {
+  .task-card {
+    width: 60%;
+    transform: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .task-card {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .task-tree-vertical::before {
+    left: 5%;
+    background: rgba(255, 215, 0, 0.4);
+  }
+
+  .task-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
