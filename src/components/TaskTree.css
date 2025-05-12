@@ -100,3 +100,51 @@
     align-items: flex-start;
   }
 }
+
+/* Mobile & small screen optimization */
+@media screen and (max-width: 768px) {
+  .task-card {
+    width: 90%;
+    transform: none !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .task-tree-vertical::before {
+    left: 5%;
+    width: 2px;
+    background: rgba(255, 215, 0, 0.3);
+  }
+
+  .task-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .task-actions button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .task-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-form input {
+    width: 100%;
+    max-width: 90%;
+    font-size: 1rem;
+  }
+
+  .task-form button {
+    width: 100%;
+    max-width: 90%;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
