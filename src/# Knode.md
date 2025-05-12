@@ -69,6 +69,7 @@ This app was built to fulfill the requirements of a Software Engineering project
 
 ---
 
-### Deployment
+## Deployment
 
-_To be added after GitHub Pages deployment is complete._
+Live App: [https://CodyKeith9.github.io/project-3](https://CodyKeith9.github.io/project-3)
+
