@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.filter-buttons button {
+  padding: 0.5rem 1.25rem;
+  background-color: #1a1a1a;
+  color: gold;
+  border: 2px solid gold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-buttons button.active {
+  background-color: gold;
+  color: black;
+}
+
+.filter-buttons button:hover {
+  box-shadow: 0 0 10px gold;
+}
+
