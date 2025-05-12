@@ -1,4 +1,12 @@
+import ContactForm from '../components/ContactForm';
+
 function ContactPage() {
-  return <h1>Contact Form View</h1>;
+  return (
+    <div>
+      <h2 style={{ textAlign: 'center', marginTop: '2rem' }}>Contact Us</h2>
+      <ContactForm />
+    </div>
+  );
 }
+
 export default ContactPage;
